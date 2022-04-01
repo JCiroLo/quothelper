@@ -1,0 +1,347 @@
+.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 1;
+
+  h1 {
+    font-size: 8em;
+    margin-bottom: 30px;
+    color: #93b5c6;
+  }
+
+  .actions {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.work-summary,
+.questionnaire {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 1;
+
+  .questions {
+    max-width: calc(100vw - 120px);
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+
+    p,
+    u {
+      text-align: start;
+    }
+  }
+
+  .presentation,
+  .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 30px;
+    min-width: 50vw;
+    border-radius: $border-radius-mini;
+    text-align: center;
+    font-size: 20px;
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .name {
+      margin-top: 30px;
+    }
+
+    .work-title {
+      margin: 30px 0;
+    }
+
+    h2 {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  .references {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 30px;
+    min-width: 50vw;
+    max-width: calc(100vw - 120px);
+    border-radius: $border-radius-mini;
+    text-align: start;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto;
+  column-gap: 30px;
+  margin: 30px;
+  min-height: calc(100vh - 60px);
+  min-width: calc(100vw - 90px);
+  border-radius: $border-radius;
+  overflow: hidden;
+  z-index: 1;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: $border-radius;
+
+    h1 {
+      font-weight: 600;
+      align-self: center;
+      margin: 0;
+      padding-bottom: 15px;
+      color: #93b5c6;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+  .section-reader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 15px;
+
+    .mySwiper {
+      width: calc(100% - 60px);
+      border-radius: $border-radius;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          .book-template {
+            padding: 30px;
+            border-radius: $border-radius;
+            background-color: rgba(black, 0.03);
+            width: calc(100% - 60px);
+          }
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: auto;
+
+      button {
+        margin-top: auto;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .section-references {
+    overflow: hidden;
+    height: calc(100vh - 90px);
+    padding-top: 15px;
+    .references {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      width: calc(100% - 30px);
+      overflow-y: overlay;
+      scroll-behavior: smooth;
+
+      .error {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 210px);
+
+        img {
+          width: 50%;
+        }
+
+        h2 {
+          margin-top: 15px;
+          color: $text;
+        }
+      }
+
+      .reference {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px;
+        color: $text;
+        font-weight: 700;
+        font-size: 18px;
+        align-items: center;
+        border-radius: $border-radius-mini;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: rgba($background, 0.5);
+        }
+        .index {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .section-paper {
+    height: calc(100vh - 90px);
+    padding-top: 15px;
+    .paper {
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: $skeleton;
+      overflow-y: overlay;
+      scroll-behavior: smooth;
+      font-weight: bold;
+
+      .paper-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 18px;
+        gap: 10px;
+
+        .line {
+          height: 15px;
+          background-color: $skeleton;
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}
+button {
+  all: unset;
+  padding: 10px 20px;
+  width: max-content;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: $border-radius;
+  background-color: $button;
+  border: 2px solid black;
+  transition: background-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background-color: rgba($button, 0.75);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.book-type-1,
+.book-type-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  &.col {
+    flex-direction: column;
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: $text;
+}
+
+.body {
+  display: flex;
+
+  &.col {
+    flex-direction: column;
+  }
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.space {
+  height: 10px;
+  width: 100%;
+}
+
+.line {
+  margin: 5px 0;
+  height: 7px;
+  width: 100%;
+  background-color: $skeleton;
+  border-radius: $border-radius;
+}
+
+.image {
+  margin: 0 20px 0 10px;
+  height: 100%;
+  background-color: $skeleton;
+  border-radius: $border-radius-mini;
+}
+
+.subtitle {
+  margin: 10px 0;
+  height: 10px;
+  background-color: $skeleton;
+  border-radius: $border-radius;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition: transform 0.5s, opacity 0.2s ease-out;
+  will-change: transform;
+}
+
+.fade-down-enter-from,
+.fade-down-leave-to {
+  transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
+  opacity: 0;
+}
