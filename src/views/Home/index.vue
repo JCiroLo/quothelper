@@ -2,6 +2,7 @@
 transition(name="fade-down" mode="out-in")
   .greeting(v-if="page === 0")
     h1.magilo Quothelper
+    p (Se recomienda usar zoom al 80% o 90%)
     .actions  
       button(@click="page = 3") ¡Empezar!
       button(@click="page = 1") Información

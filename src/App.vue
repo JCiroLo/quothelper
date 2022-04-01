@@ -102,7 +102,7 @@ body {
   .particle:nth-child(#{$i}) {
     animation: particle-animation-#{$i} 60s infinite;
     $size: random(5) + 5 + px;
-    opacity: random(100) / 100;
+    opacity:calc(random(100) / 100);
     height: $size;
     width: $size;
     animation-delay: -$i * 0.2s;
